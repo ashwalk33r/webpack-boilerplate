@@ -1,0 +1,59 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint", "eslint-plugin-node", "cypress", "jest", "import"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"plugin:eslint-comments/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript",
+		"plugin:node/recommended"
+	],
+	"parserOptions": {
+		"ecmaVersion": 2018
+	},
+	"env": {
+		"amd": true,
+		"browser": true,
+		"cypress/globals": true,
+		"es6": true,
+		"jest/globals": true,
+		"node": true
+	},
+	"rules": {
+		"@typescript-eslint/no-explicit-any": 0,
+		"eslint-comments/no-unused-disable": "error",
+		"jest/no-disabled-tests": "warn",
+		"jest/no-focused-tests": "error",
+		"jest/no-identical-title": "error",
+		"jest/prefer-to-have-length": "warn",
+		"jest/valid-expect": "error",
+		"node/exports-style": ["error", "module.exports"],
+		"node/file-extension-in-import": 0,
+		"node/no-missing-import": 0,
+		"node/no-unpublished-import": 0,
+		"node/no-unsupported-features/es-syntax": ["error", { "ignores": ["modules"] }],
+		"node/prefer-global/buffer": ["error", "always"],
+		"node/prefer-global/console": ["error", "always"],
+		"node/prefer-global/process": ["error", "always"],
+		"node/prefer-global/url": ["error", "always"],
+		"node/prefer-global/url-search-params": ["error", "always"],
+		"node/prefer-promises/dns": "error",
+		"node/prefer-promises/fs": "error",
+		"eqeqeq": ["error", "always"],
+		"no-var": ["error"],
+		"prefer-const": [
+			"error",
+			{
+				"destructuring": "any",
+				"ignoreReadBeforeAssign": false
+			}
+		]
+	},
+	"globals": {
+		"define": "readonly"
+	}
+}
