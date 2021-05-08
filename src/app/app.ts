@@ -1,7 +1,7 @@
 import { fromEvent, merge } from 'rxjs';
 import { sample, mapTo } from 'rxjs/operators';
-import { pick } from 'lodash';
-import * as p5 from 'p5';
+// import { pick } from 'lodash';
+// import * as p5 from 'p5';
 
 const mouse$ = merge(
 	fromEvent(document, 'mousedown').pipe(mapTo(false)), //
