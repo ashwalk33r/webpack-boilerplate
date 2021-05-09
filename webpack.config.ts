@@ -13,11 +13,23 @@ module.exports = {
 	},
 	entry: './src/index.ts',
 	output: {
-		filename: 'bundle.js',
-		path: resolve(__dirname, 'dist')
+		filename: 'bundle-[name].js',
+		path: resolve(__dirname, 'dist'),
+		assetModuleFilename: 'asset/[name]-[hash][ext][query]',
 	},
 	optimization: {
-		minimize: false
+		usedExports: true,
+		moduleIds: 'deterministic',
+		runtimeChunk: 'single',
+		splitChunks: {
+			cacheGroups: {
+				'vendor': {
+					test: /node_modules/,
+					name: 'vendor',
+					chunks: 'all',
+				}
+			},
+		},
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js']
