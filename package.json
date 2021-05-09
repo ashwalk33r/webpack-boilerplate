@@ -12,7 +12,8 @@
 		"linter": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
 		"linter:fix": "yarn linter --fix",
 		"prettier": "prettier --check \"**/*.{ts,js,json,html,css,sass,md}\"",
-		"prettier:fix": "prettier --write \"**/*.{ts,js,json,html,css,sass,md}\""
+		"prettier:fix": "prettier --write \"**/*.{ts,js,json,html,css,sass,md}\"",
+		"analyze": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --profile --json > ./stats.json && npx webpack-bundle-analyzer ./stats.json"
 	},
 	"dependencies": {
 		"lodash": "^4.17.21",
@@ -49,6 +50,7 @@
 		"tsconfig-paths": "^3.9.0",
 		"typescript": "^4.2.4",
 		"webpack": "^5.36.2",
+		"webpack-bundle-analyzer": "^4.4.1",
 		"webpack-cli": "^4.6.0",
 		"webpack-dev-server": "^3.11.2"
 	}
